@@ -12,7 +12,7 @@ from streamlit_folium import st_folium
 # ============================================================
 
 st.set_page_config(
-    page_title="Wayfind",
+    page_title="WayFind",
     page_icon="🧭",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -32,7 +32,7 @@ st.markdown(
     -------------------------------------------------------- */
 
     .stApp {
-        background-color: #F7F9FC;
+        background-color: #D1D5DB;
     }
 
     .block-container {
@@ -49,7 +49,7 @@ st.markdown(
         font-size: 2rem;
         font-weight: 800;
         letter-spacing: -1px;
-        color: #172033;
+        color: #000000;
     }
 
     .brand-icon {
@@ -61,7 +61,7 @@ st.markdown(
         font-weight: 800;
         line-height: 1.05;
         letter-spacing: -2px;
-        color: #172033;
+        color: #000000;
         margin-top: 2rem;
         margin-bottom: 0.75rem;
     }
@@ -81,7 +81,7 @@ st.markdown(
     .section-title {
         font-size: 1.5rem;
         font-weight: 750;
-        color: #172033;
+        color: #000000;
         margin-top: 2rem;
         margin-bottom: 0.25rem;
     }
@@ -128,7 +128,7 @@ st.markdown(
     .recommended-badge {
         display: inline-block;
         background-color: #EEF4FF;
-        color: #3157C7;
+        color: #000000;
         font-size: 0.75rem;
         font-weight: 700;
         padding: 6px 10px;
@@ -145,13 +145,13 @@ st.markdown(
     .route-mode {
         font-size: 1.3rem;
         font-weight: 750;
-        color: #172033;
+        color: #000000;
     }
 
     .route-arrival {
         font-size: 2.3rem;
         font-weight: 800;
-        color: #172033;
+        color: #000000;
     }
 
     .route-label {
@@ -497,7 +497,7 @@ with header_col2:
 
 st.markdown(
     '<div class="hero-title">'
-    'Your commute.<br>Your priorities.'
+    "We\'ll find a way!"
     '</div>',
     unsafe_allow_html=True,
 )
