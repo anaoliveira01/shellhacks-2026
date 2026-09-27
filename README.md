@@ -10,7 +10,7 @@ It uses route information and input provided by the user such as the user's curr
 
 
 # Problem
-Modern transportation tools always find the quickest route, but never accounts for which route is best based on the user's preferences such as they want minimal walking or don't mind a longer travel time.
+Modern transportation tools always find the quickest route, but never account for which route is best based on the user's preferences such as routes that require minimal walking or are less costly to take.
 
 
 # Solution
