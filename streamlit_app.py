@@ -5,7 +5,6 @@ from datetime import date, time
 # ============================================================
 # PAGE CONFIGURATION
 # ============================================================
-
 st.set_page_config(
     page_title="Wayfind",
     page_icon="🧭",
