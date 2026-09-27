@@ -6,7 +6,7 @@ from datetime import date, time
 # PAGE CONFIGURATION
 # ============================================================
 st.set_page_config(
-    page_title="Wayfind",
+    page_title="WayFind",
     page_icon="🧭",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -473,113 +473,51 @@ with col2:
 
 
 # ============================================================
-# QUICK PRESETS
+# PRIORITY RANKING
 # ============================================================
 
 st.markdown(
-    '<div class="section-title">What matters most?</div>',
+    '<div class="section-title">Rank your priorities</div>',
     unsafe_allow_html=True,
 )
 
 st.markdown(
     '<div class="section-subtitle">'
-    'Choose a preset or adjust your priorities manually.'
+    'Rank what matters most for this trip. '
+    '1 is your highest priority and 7 is your lowest.'
     '</div>',
     unsafe_allow_html=True,
 )
 
-preset1, preset2, preset3, preset4 = st.columns(4)
+priority_options = [
+    "⚡ Fastest",
+    "🚶 Low walking",
+    "🔄 Fewer transfers",
+    "💰 Cheapest",
+    "🚦 Avoid accidents & traffic jams",
+    "🛡️ Avoid unsafe zones",
+    "🅿️ Easy parking",
+]
 
-with preset1:
-    fastest = st.button(
-        "⚡ Fastest",
-        use_container_width=True,
-    )
+rank_options = [1, 2, 3, 4, 5, 6, 7]
 
-with preset2:
-    low_walking = st.button(
-        "🚶 Low walking",
-        use_container_width=True,
-    )
+priority_rankings = {}
 
-with preset3:
-    low_traffic = st.button(
-        "🚗 Low traffic",
-        use_container_width=True,
-    )
+for index, priority in enumerate(priority_options):
 
-with preset4:
-    cheapest = st.button(
-        "💰 Cheapest",
-        use_container_width=True,
-    )
+    col1, col2 = st.columns([3, 1])
 
+    with col1:
+        st.markdown(f"{priority}")
 
-# ============================================================
-# PREFERENCE SLIDERS
-# ============================================================
-
-st.markdown("### Adjust your priorities")
-
-pref_col1, pref_col2 = st.columns(2)
-
-with pref_col1:
-
-    travel_priority = st.slider(
-        "⚡ Minimize travel time",
-        min_value=0,
-        max_value=100,
-        value=70,
-        help="How important is arriving quickly?",
-    )
-
-    walking_priority = st.slider(
-        "🚶 Minimize walking",
-        min_value=0,
-        max_value=100,
-        value=70,
-        help="How important is reducing walking?",
-    )
-
-with pref_col2:
-
-    traffic_priority = st.slider(
-        "🚗 Avoid traffic",
-        min_value=0,
-        max_value=100,
-        value=60,
-        help="How important is avoiding traffic?",
-    )
-
-    cost_priority = st.slider(
-        "💰 Minimize cost",
-        min_value=0,
-        max_value=100,
-        value=40,
-        help="How important is keeping the trip inexpensive?",
-    )
-
-
-# ============================================================
-# NATURAL LANGUAGE PREFERENCE
-# ============================================================
-
-st.markdown("### Or describe your commute")
-
-natural_language = st.text_area(
-    "Tell Wayfind what matters to you",
-    placeholder=(
-        'Example: "I need to arrive on time and I really '
-        'don\'t want to walk much. I don\'t mind spending '
-        'a little more."'
-    ),
-    height=100,
-)
-
-st.caption(
-    "Gemini will eventually interpret this preference and "
-    "translate it into route priorities."
-)
+    with col2:
+        priority_rankings[priority] = st.selectbox(
+            f"Rank {priority}",
+            rank_options,
+            index=index,
+            key=f"priority_{index}",
+            label_visibility="collapsed",
+        )
 
 
 # ============================================================
