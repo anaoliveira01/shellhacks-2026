@@ -1,6 +1,6 @@
-# shellhacks-2026 - 
+# shellhacks-2026
 WayFind
--WayFind will find a way-
+-WayFind will find a way!-
 
 
 Wayfind is an AI-powered pathfinding tool that helps users find a transportation option that best fits their schedule and priorities.
